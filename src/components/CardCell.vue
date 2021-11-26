@@ -18,7 +18,7 @@
                                 <div id="User-content">
                                     <div id="User-img" class="rounded-circle">
                                         <img 
-                                            src="https://image.freepik.com/free-photo/positive-attractive-girl-taking-selfie-showing-v-sign-peace-gesture-near-eye-holding-camera-with-stretched-hand-making-photo-smartphone-white-wall_176420-39446.jpg" 
+                                            :src="cv19014Productos.ImagenUser" 
                                             alt="User image"
                                             id="Img"
                                         />
