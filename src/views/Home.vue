@@ -15,8 +15,8 @@
           </v-col>
         </v-row>
       </v-col>
+      <FooterCell id="Footer"/>
     </v-row>
-    <FooterCell id="Footer"/>
   </v-container>
 </template>
 
@@ -35,7 +35,7 @@
     }
   }
   #Footer {
-    margin-top: 10px;
+    width: 100%;
   }
 </style>
 
