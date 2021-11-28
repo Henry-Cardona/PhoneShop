@@ -43,11 +43,29 @@
                         </div>
                     </div>
                     <div id="Card-footer-link">
-                        <button class="rounded-xl">
-                            <slot>
-                                <h1 class="subtitle-1">Ver más detalles</h1>
-                            </slot>
-                        </button>
+                        <v-dialog
+                            v-model="dialog"
+                            fullscreen
+                            hide-overlay
+                            transition="dialog-bottom-transition">
+                            <template v-slot:activator="{ on, attrs }">
+                                <button v-bind="attrs" v-on="on" class="rounded-xl">
+                                    <slot>
+                                        <h1 class="subtitle-1">Ver más detalles</h1>
+                                    </slot>
+                                </button>
+                            </template>
+                            <v-card>
+                                <v-toolbar></v-toolbar>
+                                <v-toolbar dark color="rgba(255, 0, 0, 0.733)" class="rounded-b-lg">
+                                    <v-btn icon dark @click="dialog = false">
+                                        <v-icon color="black">mdi-close</v-icon>
+                                    </v-btn>
+                                    <v-toolbar-title>Publicar nuevo anuncio</v-toolbar-title>
+                                </v-toolbar>
+                                <AnuncioCom/>
+                            </v-card>
+                        </v-dialog>
                     </div>
                 </div>
                 <img id="Img-cell" class="rounded-xl"
@@ -204,9 +222,17 @@
 </style>
 
 <script>
+    import AnuncioCom from "./AnuncioCom.vue";
     export default {
         name: "CardCell",
-        props : ["cv19014Productos"]
-        
+        props : ["cv19014Productos"],
+        components: {
+            AnuncioCom,
+        },
+        data() {
+            return {
+                dialog: false,
+            }
+        },
     };
 </script>
